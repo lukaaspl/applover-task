@@ -87,7 +87,7 @@ export const Checkbox = styled.span`
     top: 5px;
     width: 7px;
     height: 10px;
-    border: 1px solid #a5a1a1;
+    border: 1px solid ${({ theme }) => theme.color.lightgray};
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
   }
@@ -110,5 +110,10 @@ export const Button = styled.button`
   :hover,
   :focus {
     background-color: #1bd16f;
+  }
+
+  :disabled {
+    background-color: ${({ theme }) => theme.color.lightgray};
+    cursor: default;
   }
 `;

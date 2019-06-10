@@ -1,15 +1,26 @@
 import React from "react";
 import { Label, Select } from "./style";
+import { LanguageConsumer } from "../../contexts/LanguageContext";
 
 const LanguageForm = () => {
   return (
-    <form>
-      <Label htmlFor="language">Select language:</Label>
-      <Select id="language">
-        <option>English</option>
-        <option>Polish</option>
-      </Select>
-    </form>
+    <LanguageConsumer>
+      {({ translation, language, changeLanguage }) => (
+        <form>
+          <Label htmlFor="language">
+            {translation.global.selectLanguageLabel}:
+          </Label>
+          <Select
+            id="language"
+            value={language}
+            onChange={e => changeLanguage(e.target.value)}
+          >
+            <option value="en">{translation.global.englishLanguage}</option>
+            <option value="pl">{translation.global.polishLanguage}</option>
+          </Select>
+        </form>
+      )}
+    </LanguageConsumer>
   );
 };
 

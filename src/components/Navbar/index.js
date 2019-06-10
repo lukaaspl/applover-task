@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledWrapper, InnerWrapper, HeartLogo } from "./style.js";
+import { StyledWrapper, InnerWrapper } from "./style.js";
 import logo from "../../assets/logo.png";
 import LanguageForm from "../../containers/LanguageForm/";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
     <StyledWrapper>
       <InnerWrapper>
         <Link to="/">
-          <HeartLogo src={logo} alt="AppLover" />
+          <img src={logo} alt="AppLover" />
         </Link>
         <LanguageForm />
       </InnerWrapper>

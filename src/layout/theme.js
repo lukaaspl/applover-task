@@ -8,7 +8,8 @@ const theme = {
     primary: "Roboto, sans-serif"
   },
   color: {
-    lightgray: "#a5a1a1"
+    lightgray: "#a5a1a1",
+    red: "#f24e33"
   }
 };
 
@@ -22,7 +23,13 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
+    height: 100vh;
   }
+`;
+
+export const MainContainer = styled.div`
+  transition: filter 0.3s;
+  filter: ${({ blurred }) => (blurred ? "blur(4px)" : "none")};
 `;
 
 export default theme;

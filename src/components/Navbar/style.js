@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { heartPulsing } from "../../helpers/animations";
 
 export const StyledWrapper = styled.div`
   background-color: #fff;
@@ -15,13 +14,4 @@ export const InnerWrapper = styled.div`
   padding: 0 107px;
   margin: 0 auto;
   height: 80px;
-`;
-
-export const HeartLogo = styled.img`
-  transition: transform .2s, opacity .2s;
-  :hover {
-    /* animation: ${heartPulsing} 0.5s both; */
-    /* transform: scale(.9); */
-    opacity: .8;
-  }
 `;
