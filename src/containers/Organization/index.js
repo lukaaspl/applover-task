@@ -8,11 +8,26 @@ const Organization = () => {
   const [organizationShown, setOrganizationShown] = useState(false);
   const [organizationDetails, setOrganizationDetails] = useState(null);
 
+  const hideOrganizationDetails = e => {
+    const clickedOutOfOrganizationBox =
+      e.target.closest(`#organization-details`) === null;
+
+    if (clickedOutOfOrganizationBox) {
+      setOrganizationShown(false);
+      window.removeEventListener("click", hideOrganizationDetails);
+    }
+  };
+
   useEffect(() => {
-    getOrganizationDetails()
-      .then(response => setOrganizationDetails(JSON.parse(response)))
-      .catch(error => setOrganizationDetails(false));
-  }, []);
+    if (organizationDetails === null) {
+      getOrganizationDetails()
+        .then(response => setOrganizationDetails(JSON.parse(response)))
+        .catch(error => setOrganizationDetails(false));
+    }
+
+    if (organizationShown)
+      window.addEventListener("click", hideOrganizationDetails);
+  }, [organizationShown]);
 
   return (
     <LanguageConsumer>

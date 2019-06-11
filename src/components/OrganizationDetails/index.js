@@ -4,7 +4,7 @@ import { ClipLoader } from "react-spinners";
 
 const OrganizationDetails = ({ isShown, details }) => {
   return (
-    <StyledWrapper visible={isShown}>
+    <StyledWrapper visible={isShown} id="organization-details">
       <ClipLoader
         color={"#77779d"}
         loading={!details}
