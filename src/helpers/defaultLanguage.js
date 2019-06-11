@@ -17,6 +17,7 @@ export const setLanguageBasedOnLocation = async function(position) {
   if (countryCode.includes("pl")) languageToSet = "pl";
 
   this.setState({ language: languageToSet });
+  storage.saveLanguage(languageToSet);
 };
 
 export const setLanguageBasedOnBrowserSettings = function() {

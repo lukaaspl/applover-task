@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { UserProvider } from "./contexts/UserContext";
 
-import Configurator from "./containers/Configurator";
+import Configurator from "./containers/Configurator/";
 import Navbar from "./components/Navbar/";
 import LoginForm from "./containers/LoginForm/";
 import LoadingScreen from "./components/LoadingScreen";

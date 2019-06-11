@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
   background-color: #fff;
-  box-shadow: 0 3px 12px rgba(201, 201, 201, 0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 `;
 
 export const InnerWrapper = styled.div`
@@ -14,4 +14,8 @@ export const InnerWrapper = styled.div`
   padding: 0 107px;
   margin: 0 auto;
   height: 80px;
+`;
+
+export const NavWrapper = styled.div`
+  display: flex;
 `;

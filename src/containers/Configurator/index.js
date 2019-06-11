@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { UserConsumer } from "../contexts/UserContext";
+import { UserConsumer } from "../../contexts/UserContext";
 import { Redirect } from "react-router-dom";
 
 class Configurator extends Component {

@@ -3,7 +3,8 @@ const translations = {
     global: {
       selectLanguageLabel: "Select language",
       polishLanguage: "Polish",
-      englishLanguage: "English"
+      englishLanguage: "English",
+      organizationButtonLabel: "My organization"
     },
 
     loginForm: {
@@ -26,7 +27,8 @@ const translations = {
     global: {
       selectLanguageLabel: "Wybierz język",
       polishLanguage: "polski",
-      englishLanguage: "angielski"
+      englishLanguage: "angielski",
+      organizationButtonLabel: "Moja organizacja"
     },
 
     loginForm: {
