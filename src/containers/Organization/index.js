@@ -9,8 +9,7 @@ const Organization = () => {
   const [organizationDetails, setOrganizationDetails] = useState(null);
 
   const hideOrganizationDetails = e => {
-    const clickedOutOfOrganizationBox =
-      e.target.closest(`#organization-details`) === null;
+    const clickedOutOfOrganizationBox = e.target.closest(`#organization-details`) === null;
 
     if (clickedOutOfOrganizationBox) {
       setOrganizationShown(false);
@@ -21,12 +20,11 @@ const Organization = () => {
   useEffect(() => {
     if (organizationDetails === null) {
       getOrganizationDetails()
-        .then(response => setOrganizationDetails(JSON.parse(response)))
+        .then(({ data }) => setOrganizationDetails(data))
         .catch(error => setOrganizationDetails(false));
     }
 
-    if (organizationShown)
-      window.addEventListener("click", hideOrganizationDetails);
+    if (organizationShown) window.addEventListener("click", hideOrganizationDetails);
   }, [organizationShown]);
 
   return (
@@ -36,10 +34,7 @@ const Organization = () => {
           <LinkButton onClick={() => setOrganizationShown(!organizationShown)}>
             {translation.global.organizationButtonLabel}
           </LinkButton>
-          <OrganizationDetails
-            isShown={organizationShown}
-            details={organizationDetails}
-          />
+          <OrganizationDetails isShown={organizationShown} details={organizationDetails} />
         </StyledWrapper>
       )}
     </LanguageConsumer>

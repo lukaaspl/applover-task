@@ -22,6 +22,16 @@ const translations = {
       buttonLabel: "Take me home"
     },
 
+    organization: {
+      nameLabel: "Organization name",
+      emailAddressLabel: "E-mail address",
+      phoneNumberLabel: "Phone number",
+      addressLine1Label: "Address line 1",
+      addressLine2Label: "Address line 2",
+      cityLabel: "City",
+      postalCodeLabel: "Postal code"
+    },
+
     configurator: {
       stepLabel: "Step",
       chooseDoorLabel: "Choose door",
@@ -64,6 +74,16 @@ const translations = {
     pageNotFound: {
       title: "Nie odnaleziono strony",
       buttonLabel: "Zabierz mnie stąd"
+    },
+
+    organization: {
+      nameLabel: "Nazwa organizacji",
+      emailAddressLabel: "Adres e-mail",
+      phoneNumberLabel: "Numer telefonu",
+      addressLine1Label: "Adres",
+      addressLine2Label: "Adres (c.d)",
+      cityLabel: "Miejscowość",
+      postalCodeLabel: "Kod pocztowy"
     },
 
     configurator: {

@@ -30,3 +30,15 @@ export const loaderStyles = css`
   left: calc(50% - 25px);
   top: calc(50% - 25px);
 `;
+
+export const DetailsList = styled.ul`
+  list-style: none;
+  padding: 20px;
+  font-size: 14px;
+  color: #7e7e7e;
+  text-align: center;
+
+  li {
+    margin: 5px 0;
+  }
+`;
