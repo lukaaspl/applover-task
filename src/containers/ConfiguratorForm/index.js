@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { StyledWrapper, StyledForm, StepButtonContainer, StepButton } from "./style";
 import ChooseDoorStep from "../../components/Steps/ChooseDoorStep";
 import ChooseDoorDivisionStep from "../../components/Steps/ChooseDoorDivisionStep";
@@ -42,9 +43,12 @@ class ConfiguratorForm extends Component {
   };
 
   renderStep = step => {
-    if (step === 1) return <ChooseDoorStep configuratorState={this.state} update={this.handleUpdate} />;
-    if (step === 2) return <ChooseColorStep configuratorState={this.state} update={this.handleUpdate} />;
-    if (step === 3) return <ChooseDoorDivisionStep configuratorState={this.state} update={this.handleCounterUpdate} />;
+    if (step === 1)
+      return (
+        <ChooseDoorStep configuratorState={this.state} update={this.handleUpdate} setModal={this.props.setModal} />
+      );
+    if (step === 2) return <ChooseDoorDivisionStep configuratorState={this.state} update={this.handleCounterUpdate} />;
+    if (step === 3) return <ChooseColorStep configuratorState={this.state} update={this.handleUpdate} />;
     return null;
   };
 

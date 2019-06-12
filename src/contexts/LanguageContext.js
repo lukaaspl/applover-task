@@ -1,12 +1,9 @@
 import React, { createContext } from "react";
 import translations from "../helpers/translations";
 import storage from "../helpers/storage";
-import {
-  setLanguageBasedOnLocation,
-  setLanguageBasedOnBrowserSettings
-} from "../helpers/defaultLanguage";
+import { setLanguageBasedOnLocation, setLanguageBasedOnBrowserSettings } from "../helpers/defaultLanguage";
 
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 export class LanguageProvider extends React.Component {
   state = {
@@ -14,8 +11,7 @@ export class LanguageProvider extends React.Component {
   };
 
   componentDidMount() {
-    if (storage.getLanguage())
-      return this.setState({ language: storage.getLanguage() });
+    if (storage.getLanguage()) return this.setState({ language: storage.getLanguage() });
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(

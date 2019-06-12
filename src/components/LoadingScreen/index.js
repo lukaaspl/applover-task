@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  LoadingOverlay,
-  Label,
-  LoadingBar,
-  LoadingProgressBar,
-  LoadingProgressPercent
-} from "./style";
+import { LoadingOverlay, Label, LoadingBar, LoadingProgressBar, LoadingProgressPercent } from "./style";
 
 import { LanguageConsumer } from "../../contexts/LanguageContext";
 import { UserContext } from "../../contexts/UserContext";
@@ -16,27 +10,25 @@ class LoadingScreen extends Component {
     super(props);
 
     this.state = {
-      loadingPercent: 0,
-      loaded: false
+      loadingPercent: 0
     };
 
     this.loadingInterval = null;
     this.loadingTimeout = null;
     this.setLoadingScreen = this.props.setLoadingScreen;
+    this.setLoaded = this.props.setLoaded;
   }
 
   componentDidUpdate({ visible: isAlreadyVisible }) {
-    if (isAlreadyVisible || this.state.loaded) return;
+    if (isAlreadyVisible || this.props.loaded) return false;
 
     this.loadingInterval = setInterval(() => {
       this.setState(({ loadingPercent: prevLoadingPercent }) => {
-        if (prevLoadingPercent === 100) {
+        if (prevLoadingPercent === 99) {
           clearInterval(this.loadingInterval);
+          this.setLoaded(true);
           this.context.userLogin(this.props.keepUserLogged);
-          return {
-            loadingPercent: prevLoadingPercent + 1,
-            loaded: true
-          };
+          return { loadingPercent: prevLoadingPercent + 1 };
         }
 
         return {
@@ -52,7 +44,7 @@ class LoadingScreen extends Component {
   }
 
   render() {
-    if (this.state.loaded) {
+    if (this.props.loaded) {
       this.setLoadingScreen(false);
       return <Redirect to="/" />;
     }
@@ -64,9 +56,7 @@ class LoadingScreen extends Component {
             <Label>{translation.loginForm.loadingLabel}</Label>
             <LoadingBar>
               <LoadingProgressBar progress={loadingPercent} />
-              <LoadingProgressPercent isWhite={loadingPercent < 96}>
-                {loadingPercent}%
-              </LoadingProgressPercent>
+              <LoadingProgressPercent isWhite={loadingPercent < 96}>{loadingPercent}%</LoadingProgressPercent>
             </LoadingBar>
           </LoadingOverlay>
         )}

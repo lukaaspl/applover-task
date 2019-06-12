@@ -41,6 +41,7 @@ class Configurator extends Component {
                   stepsNumber={stepsNumber}
                   nextStep={this.handleNextStep}
                   previousStep={this.handlePreviousStep}
+                  setModal={this.props.setModal}
                 />
               </InnerWrapper>
             </StyledWrapper>

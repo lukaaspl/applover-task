@@ -58,5 +58,5 @@ export const Description = styled.div`
   text-align: center;
   left: 54%;
   transform: translateX(-50%);
-  width: 110px;
+  width: 120px;
 `;
