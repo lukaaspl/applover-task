@@ -20,6 +20,26 @@ const translations = {
     pageNotFound: {
       title: "Page not found",
       buttonLabel: "Take me home"
+    },
+
+    configurator: {
+      stepLabel: "Step",
+      chooseDoorLabel: "Choose door",
+      chooseDoorDivisionLabel: "Choose door division",
+      chooseColorLabel: "Choose color",
+      doorTypeLabel: "Door type",
+      singleDoorLabel: "Single door",
+      doubleDoorLabel: "Double door",
+      doorSizeLabel: "Door size",
+      doorWidthLabel: "Width",
+      doorHeightLabel: "Height",
+      doorDivisionLabel: "Door division",
+      numberOfBeamsLabel: "Number of beams",
+      numberOfPostsLabel: "Number of posts",
+      doorColorLabel: "Choose color",
+      nextStepButtonLabel: "Next step",
+      previousStepButtonLabel: "Back",
+      rendererInBuilding: "Renderer in building"
     }
   },
 
@@ -44,6 +64,26 @@ const translations = {
     pageNotFound: {
       title: "Nie odnaleziono strony",
       buttonLabel: "Zabierz mnie stąd"
+    },
+
+    configurator: {
+      stepLabel: "Krok",
+      chooseDoorLabel: "Wybierz drzwi",
+      chooseDoorDivisionLabel: "Wybierz podział drzwi",
+      chooseColorLabel: "Wybierz kolor",
+      doorTypeLabel: "Rodzaj drzwi",
+      singleDoorLabel: "Pojedyncze drzwi",
+      doubleDoorLabel: "Podwójne drzwi",
+      doorSizeLabel: "Rozmiar drzwi",
+      doorWidthLabel: "Szerokość",
+      doorHeightLabel: "Wysokość",
+      doorDivisionLabel: "Podział drzwi",
+      numberOfBeamsLabel: "Liczba belek",
+      numberOfPostsLabel: "Liczba słupków",
+      doorColorLabel: "Wybierz kolor",
+      nextStepButtonLabel: "Następny krok",
+      previousStepButtonLabel: "Wstecz",
+      rendererInBuilding: "Renderer w trakcie budowy"
     }
   }
 };

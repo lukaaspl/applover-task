@@ -1,21 +1,49 @@
 import React, { Component } from "react";
 import { UserConsumer } from "../../contexts/UserContext";
 import { Redirect } from "react-router-dom";
+import { StyledWrapper, InnerWrapper } from "./style";
+import StepsList from "../../components/StepsList/";
+import Renderer from "../../containers/Renderer/";
+import ConfiguratorForm from "../../containers/ConfiguratorForm/";
+
+const stepsNumber = 3;
 
 class Configurator extends Component {
+  state = {
+    step: 1
+  };
+
+  handleNextStep = () =>
+    this.setState(previousState => ({
+      step: previousState.step + 1
+    }));
+
+  handlePreviousStep = () =>
+    this.setState(previousState => ({
+      step: previousState.step - 1
+    }));
+
   render() {
+    const { step } = this.state;
+
     return (
       <UserConsumer>
         {({ userLogged }) => {
           if (!userLogged) return <Redirect to="/login" />;
+
           return (
-            <div style={{ margin: 20 }}>
-              <p>Witaj w konfiguratorze!</p>
-              <small>
-                Status:
-                <strong> {userLogged ? "Zalogowano" : "Niezalogowano"}</strong>
-              </small>
-            </div>
+            <StyledWrapper>
+              <StepsList step={step} />
+              <InnerWrapper>
+                <Renderer />
+                <ConfiguratorForm
+                  step={step}
+                  stepsNumber={stepsNumber}
+                  nextStep={this.handleNextStep}
+                  previousStep={this.handlePreviousStep}
+                />
+              </InnerWrapper>
+            </StyledWrapper>
           );
         }}
       </UserConsumer>
